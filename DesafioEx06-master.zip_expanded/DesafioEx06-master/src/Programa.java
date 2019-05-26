@@ -34,20 +34,12 @@ public class Programa {
     }
 
 
-    public boolean roletaDaSorte() {
-        Random random = new Random();
-        int a = random.nextInt(100);
-        if (a %2==0) return false;
-        return true;
+    public int roletaDaSorte() {
+        return geraAleatorio(16, 4);
     }
 
-    public int random() {
-        Random r =  new Random();
-        int var = 0;
-        for (int i = 4; i < 16; i++) {
-            var = r.nextInt(100);
-        }
-
-        return var;
-    }
+    public static int geraAleatorio(int max, int min) {
+		Random random = new Random();
+		return (random.nextInt(max - (min - 1)) + min);
+	}
 }
