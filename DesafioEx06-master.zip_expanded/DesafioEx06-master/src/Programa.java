@@ -44,6 +44,10 @@ public class Programa {
 		return aux;
 	}
 
+	/**
+	 * 
+	 * @return retorna a menor fila 
+	 */
 	public DynamicQueue<Integer> verificarMenorFila() {
 		DynamicQueue menor = fila1.size() < fila2.size() ? fila1 : fila2;
 		menor = menor.size() < fila3.size() ? menor : fila3;
@@ -63,8 +67,8 @@ public class Programa {
 		int retirar = r.nextInt(2) + 1;
 
 		if (maiorTempo() == fila1.size()) {
-			if (retirar > fila2.size())retirar = 1;
-			if (fila2.size() == 0)return;
+			if (retirar >= fila1.size())retirar = 1;
+			if (fila1.size() == 0)return;
 			while (retirar > 0) {
 				this.caixa1--;
 				System.out.println("fila 1 saiu " + fila1.dequeue());
@@ -73,7 +77,7 @@ public class Programa {
 			return;
 		}
 		if (maiorTempo() == fila2.size()) {
-			if (retirar > fila2.size())retirar = 1;
+			if (retirar >= fila2.size())retirar = 1;
 			if(fila2.size()==0)  return;
 			
 					while (retirar > 0) {
@@ -85,8 +89,8 @@ public class Programa {
 
 		}
 		if (maiorTempo() == fila3.size()) {
-			if (retirar > fila2.size())retirar = 1;
-			if (fila2.size() == 0)return;
+			if (retirar > fila3.size())retirar = 1;
+			if (fila3.size() == 0)return;
 
 			while (retirar > 0) {
 				this.caixa3--;
@@ -95,8 +99,8 @@ public class Programa {
 			}
 		}
 		if (maiorTempo() == fila4.size()) {
-			if (retirar > fila2.size())retirar = 1;
-			if (fila2.size() == 0)return;
+			if (retirar > fila4.size())retirar = 1;
+			if (fila4.size() == 0)return;
 
 			while (retirar > 0) {
 				this.caixa4--;
@@ -106,8 +110,8 @@ public class Programa {
 			return;
 		}
 		if (maiorTempo() == fila5.size()) {
-			if (retirar > fila2.size())retirar = 1;
-			if (fila2.size() == 0)return;
+			if (retirar > fila5.size())retirar = 1;
+			if (fila5.size() == 0)return;
 
 			while (retirar > 0) {
 				this.caixa5--;
