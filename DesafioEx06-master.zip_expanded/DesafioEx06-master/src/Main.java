@@ -19,9 +19,28 @@ public class Main {
             System.out.println(p.fila4.size());
             System.out.println(p.fila5.size());
             System.out.println("---------------------------------------------------------");
-            cont++;
 
+            cont++;
         }
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+        p.sairDaFila();
+    
+
 
     }
 
