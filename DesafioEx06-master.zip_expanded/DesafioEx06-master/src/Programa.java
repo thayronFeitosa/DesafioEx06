@@ -9,11 +9,14 @@ public class Programa {
 	public DynamicQueue<Integer> fila4;
 	public DynamicQueue<Integer> fila5;
 
-	private int caixa1;
+	private int caixa1; 
 	private int caixa2;
 	private int caixa3;
 	private int caixa4;
 	private int caixa5;
+	
+	private double time1,time2,time3,time4,time5;
+	
 
 	public Programa(DynamicQueue fila1, DynamicQueue fila2, DynamicQueue fila3, DynamicQueue fila4,
 			DynamicQueue fila5) {
@@ -61,7 +64,7 @@ public class Programa {
 /**
  * retira da fila os elementos com um random que pode ser 1 ou 2 pessoas por caixa
  */
-	public void sairDaFila() {
+	public void sairDaFila(double valor) {
 		Random r = new Random();
 
 		int retirar = r.nextInt(2) + 1;
@@ -73,6 +76,7 @@ public class Programa {
 				this.caixa1--;
 				System.out.println("fila 1 saiu " + fila1.dequeue());
 				retirar--;
+				this.time1 =- valor;
 			}
 			return;
 		}
@@ -84,6 +88,8 @@ public class Programa {
 				this.caixa2--;
 				System.out.println("fila 2 saiu " + fila2.dequeue());
 				retirar--;
+				this.time2 =- valor;
+
 			}
 			return;
 
@@ -96,6 +102,8 @@ public class Programa {
 				this.caixa3--;
 				System.out.println("fila 3 saiu " + fila3.dequeue());
 				retirar--;
+				this.time3 =- valor;
+
 			}
 		}
 		if (maiorTempo() == fila4.size()) {
@@ -106,6 +114,8 @@ public class Programa {
 				this.caixa4--;
 				System.out.println("fila 4 saiu " + fila4.dequeue());
 				retirar--;
+				this.time4 =- valor;
+
 			}
 			return;
 		}
@@ -117,6 +127,8 @@ public class Programa {
 				this.caixa5--;
 				System.out.println("fila 5 saiu " + fila5.dequeue());
 				retirar--;
+				this.time3 =- valor;
+
 			}
 			return;
 		}
@@ -125,23 +137,37 @@ public class Programa {
 	/**
 	 * preenche as filas de acordo com a prioridade da menor fila
 	 */
-	public void preencherFila() {
+	public void preencherFila(double valor) {
 		if (verificarMenorFila() == fila1) {
 			fila1.enqueue(1);
 			caixa1++;
+			this.time1 =+ valor;
 		} else if (verificarMenorFila() == fila2) {
 			fila2.enqueue(1);
 			caixa2++;
+			this.time2 =+ valor;
 		} else if (verificarMenorFila() == fila3) {
 			fila3.enqueue(1);
 			caixa3++;
+			this.time3 =+ valor;
 		} else if (verificarMenorFila() == fila4) {
 			fila4.enqueue(1);
 			caixa4++;
+			this.time4 =+ valor;
 		} else {
 			fila5.enqueue(1);
 			caixa5++;
+			this.time5 =+ valor;
+
 		}
+	}
+	
+	public void tempoMedio(){
+		System.out.println("TEMPO 1 "+this.time1);
+		System.out.println("TEMPO 2 "+this.time1);
+		System.out.println("TEMPO 3 "+this.time1);
+		System.out.println("TEMPO 4 "+this.time1);
+		System.out.println("TEMPO 5 "+this.time1);
 	}
 
 	public int roletaDaSorte() {

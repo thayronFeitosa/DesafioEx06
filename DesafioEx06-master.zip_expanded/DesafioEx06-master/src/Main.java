@@ -10,9 +10,9 @@ public class Main {
         DynamicQueue<Integer> fila5 = new DynamicQueue<>();
         Programa p = new Programa(fila1, fila2, fila3, fila4, fila5);
 
-        int cont = 0;
-        while (cont  < 15) {
-            p.preencherFila();
+        double cont = 0;
+        while (cont  < 60) {
+            p.preencherFila(cont);
             System.out.println(p.fila1.size());
             System.out.println(p.fila2.size());
             System.out.println(p.fila3.size());
@@ -22,23 +22,8 @@ public class Main {
 
             cont++;
         }
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
-        p.sairDaFila();
+        p.tempoMedio();
+       
 
     
 
